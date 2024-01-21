@@ -1,0 +1,26 @@
+<h2>Crea una nueva película</h2>
+
+<form action="/movies/create" method="POST">
+  <!-- Campo para el título -->
+  <label for="title">Título:</label>
+  <input type="text" id="title" name="title" required>
+
+  <!-- Campo para el género -->
+  <label for="genre">Género:</label>
+  <input type="text" id="genre" name="genre">
+
+  <!-- Campo para la trama -->
+  <label for="plot">Trama:</label>
+  <input type="text" id="plot" name="plot">
+
+  <!-- Campo para el reparto (celebridades) -->
+  <label for="cast">Reparto:</label>
+  <select id="cast" name="cast" multiple>
+    {{#each celebrities}}
+      <option value="{{this._id}}">{{this.name}}</option>
+    {{/each}}
+  </select>
+
+  <!-- Botón de envío -->
+  <button type="submit">Crear película</button>
+</form>
